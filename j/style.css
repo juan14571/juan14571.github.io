@@ -1,34 +1,33 @@
-
 @font-face {
   font-family:Niagato;
-  src: url(../fonts/Niagato.ttf);
+  src: url(Niagato.ttf);
  }
 @font-face {
   font-family: Harukaze;
-  src: url(../fonts/Harukaze.otf); 
+  src: url(Harukaze.otf); 
 }
 
-
- .Blossom{
-  font-family: Harukaze;
-   text-align: center;
-  font-size: 50px;
-  margin: 0;
- }
-
+header {
+    width: 96.1vw;
+    height: 150px;
+    background-color:rgb(244, 167, 150);
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+}
 
 body {
   margin: 10px;
   padding: 10px;
   font-family:sans-serif;
-  background-color:#f2f2f2 ;
+  background-color:lightblue ;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-header {
+ header {
   width: 100%;
   background-color:#ffa88c ;
   padding: 10px 0;
@@ -37,32 +36,14 @@ header {
   align-items: center;
   position: static; 
   z-index: 1000;
-  min-height: 150px;
 }
-.logo{
- height: 100px;
-  width: auto;
-  border-radius: 50%;
-  animation: rotar 8s linear infinite;
-  margin-bottom: 10px;
-}
-
-
-@keyframes rotar {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 nav{
    background-color:#ffcebf;
   height: auto; 
   bottom: 100px;
   padding: 10px;
 justify-content: center;
+width: 97.1vw;
 }
 
 nav a {
@@ -87,60 +68,52 @@ nav a {
         list-style: none;
         padding: 0;
     }
-
   main {
   padding-top: 40px;
   justify-content: center;
   align-items: center;
-  background-color: #e17a7a;
-  width: 97.1vw;
-  height: auto;
-}
-
-.compu{
-  width: 500px;
-  height: 350px;
-}
-.tablet{
-  width: 500px;
-  height: 350px;
-}
-.cel{
-  width: 500px;
-  height: 350px;
-}
-.conten{
-  background-color: #e17a7a;
 }
 footer{
-  width:99%;
-  height: 25px;
-  text-align: left;
-  background-color: rgb(250, 230, 196);
-  padding: 20px;
-  bottom: 0;
 
+    width: 96.1vw;
+    height: 25px;
+    text-align: left;
+    background-color: rgb(250, 230, 196);
+    padding: 20px;
+
+   bottom: 0;
+    
     }
-
 footer img {
+    
     height: 90%;
     padding-left: 15%;
+    
+    
 }
-
 footer img {
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
-
-footer img:hover {
-    animation: palpitacion 1s infinite;
+.jing{
+  position: absolute;
+  z-index: initial;
+  margin: 0;
+width: 96.1vw;
 }
-
-@keyframes palpitacion {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
+.igris{
+  position: absolute;
+  z-index: inherit;
+  margin: 0;
+width: 96.1vw;
+}
+.beru{
+  position: absolute;
+  z-index: auto;
+  margin: 0;
+width: 96.1vw;
+}
+.fondo{
+margin: 0;
+width: 96.1vw;
 }

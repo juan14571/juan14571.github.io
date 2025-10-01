@@ -84,6 +84,16 @@ nav a {
         list-style: none;
         padding: 0;
     }
+    .nav ul li a{
+        text-decoration: #e17a7a;
+         color: #e17a7a;
+    font-weight: bold;
+    font-size: larger;
+    padding: 10px 20px;
+    display: flex
+ color 0.3s, transform 0.3s;
+ margin: 70px;
+    }
 
   main {
   padding-top: 40px;
