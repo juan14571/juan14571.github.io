@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecciona tu personaje - Solo Leveling</title>
+
+    <!-- 🔧 Normaliza estilos por defecto de todos los navegadores -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #0b0b0b;
+            color: white;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #6cf;
+        }
+
+        select {
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-top: 10px;
+            background-color: #1a1a1a;
+            color: white;
+            border: 2px solid #6cf;
+        }
+
+        img {
+            margin-top: 20px;
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(108, 204, 255, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        .descripcion {
+            margin-top: 20px;
+            font-size: 18px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #ddd;
+        }
+
+        #info {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 10px rgba(108, 204, 255, 0.2);
+        }
+        nav {
+      background-color: #111;
+      box-shadow: 0 2px 10px rgba(108, 204, 255, 0.3);
+      padding: 10px 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #6cf;
+      font-weight: 500;
+      font-size: 18px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    /* ✨ Efecto hover animado */
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background-color: #6cf;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* 📱 Versión responsive */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav {
+        text-align: center;
+      }
+    }
+
+    /* Contenido de ejemplo */
+    main {
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #6cf;
+    }
+    </style>
+</head>
+<body>
+    <nav class="nav-list">
+            <ul>
+                <a href="/inicio/index.html">Inicio</a>
+                <a href="/Unidad 1/index2.html">Unidad 1</a>
+                <a href="/j/index.html">fondo</a>
+                <a href="/Unidad 2/index3.html">Unidad 2</a>
+                <a href="/Unidad 3/index4.html">Unidad 3</a>
+                <a href="/script/script.html">script</a>
+            </ul>
+        </nav>
+    <h1>Selecciona un personaje de <span style="color:#6cf;">Solo Leveling</span></h1>
+
+    <select id="personaje">
+        <option value="">-- Elige un personaje --</option>
+        <option value="sung">Sung Jin-Woo</option>
+        <option value="cha">Cha Hae-In</option>
+        <option value="goh">Go Gun-Hee</option>
+        <option value="iro">Igris</option>
+        <option value="beru">Beru</option>
+    </select>
+
+    <div id="info"></div>
+
+    <script>
+        const select = document.getElementById("personaje");
+        const infoDiv = document.getElementById("info");
+
+        select.addEventListener("change", () => {
+            const personaje = select.value;
+            let descripcion = "";
+            let imagen = "";
+
+            switch(personaje) {
+                case "sung":
+                    descripcion = "Sung Jin-Woo es el protagonista, un cazador de rango E que despierta el poder del 'Sistema' y se convierte en el más fuerte del mundo.";
+                    imagen = "https://m.media-amazon.com/images/M/MV5BMzQxNDE5NTMtZTk5OS00MTMzLWI5NjgtYWJkN2VjZTJjMzU3XkEyXkFqcGc@._V1_QL75_UX388_.jpg";
+                    break;
+                case "cha":
+                    descripcion = "Cha Hae-In es una cazadora de rango S con una sensibilidad especial hacia el maná, y una de las más poderosas del gremio Hunters.";
+                    imagen = "https://alfabetajuega.com/hero/2025/02/cha-hae-in-en-solo-leveling.jpg?width=1200&aspect_ratio=16:9";
+                    break;
+                case "goh":
+                    descripcion = "Go Gun-Hee es el presidente de la Asociación de Cazadores de Corea y uno de los cazadores más sabios y experimentados.";
+                    imagen = "https://preview.redd.it/would-go-gunhee-be-a-national-rank-hunter-if-he-was-still-v0-mlmyhda3czme1.jpeg?width=640&crop=smart&auto=webp&s=cfe8935b72063e81aa936bd5bdd55f790a69fe5f";
+                    break;
+                case "iro":
+                    descripcion = "Igris es uno de los caballeros sombra de Sung Jin-Woo, conocido por su lealtad, fuerza y elegancia en el combate.";
+                    imagen = "https://i.pinimg.com/736x/ab/c3/33/abc333427803e666054f1b1d3d5e78b5.jpg";
+                    break;
+                case "beru":
+                    descripcion = "Beru es una poderosa hormiga sombra con una personalidad leal y un poder inmenso. Fue uno de los primeros subordinados élite de Jin-Woo.";
+                    imagen = "https://preview.redd.it/igris-vs-beru-who-wins-v0-x6av3yctxoke1.jpg?width=640&crop=smart&auto=webp&s=c6556db227c778505066dec5d7f2a1765184978b";
+                    break;
+                default:
+                    descripcion = "";
+                    imagen = "";
+            }
+
+            if (personaje !== "") {
+                infoDiv.innerHTML = `
+                    <h2>${select.options[select.selectedIndex].text}</h2>
+                    <img src="${imagen}" alt="${select.options[select.selectedIndex].text}">
+                    <div class="descripcion">${descripcion}</div>
+                `;
+            } else {
+                infoDiv.innerHTML = "";
+            }
+        });
+    </script>
+</body>
+</html>
