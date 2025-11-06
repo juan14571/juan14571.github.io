@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Dragon Ball</title>
+  <link rel="stylesheet" href="flex.css">
+</head>
+<body>
+     <nav>
+  <ul class="menu" id="menu">
+    <li><a href="/inicio/index.html">Inicio</a></li>
+    <li><a href="/Unidad 1/index2.html">Unidad 1</a></li>
+
+    <li class="submenu">
+      <a href="/Unidad 2/index3.html">Unidad 2</a>
+      <!-- Submenú que aparece al hacer clic en Unidad 2 -->
+      <ul class="submenu-list">
+        <li><a href="/j/index.html">Fondo</a></li>
+        <li><a href="/script/script.html">Script</a></li>
+        <li><a href="/Pagina clue/index.html">Clue</a></li>
+      </ul>
+    </li>
+
+    <li class="submenu">
+      <a href="/Unidad 3/index4.html">Unidad 3</a>
+      <!-- Submenú que aparece al hacer clic en Unidad 3 -->
+      <ul class="submenu-list">
+        <li><a href="/flexbox/flexbox.html">Flexbox</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+  <!-- Contenedor Flexbox estilo Dragon Ball -->
+  <div class="contenedor">
+    <div class="caja goku">Goku</div>
+    <div class="caja vegeta">Vegeta</div>
+    <div class="caja gohan">Gohan</div>
+    <div class="caja picoro">picoro</div>
+    <div class="caja freezer">freezer</div>
+    
+  </div>
+
+  <script>
+    // Script para el botón hamburguesa
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

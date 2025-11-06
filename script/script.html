@@ -125,19 +125,132 @@
     h1 {
       color: #6cf;
     }
+          .nav-list {
+    position: relative;
+ 
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-right: 20px;
+    
+}
+
+.menu a {
+   
+    text-decoration: none;
+    padding: 14px;
+    display: block;
+    
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    height: 4px;
+   
+    width: 100%;
+}
+
+.submenu-list {
+    display: none;
+
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu-list li {
+    padding: 10px;
+}
+
+.submenu:hover .submenu-list {
+    display: block;
+}
+
+/* Menú desplegable en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+     
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .menu li {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .submenu-list {
+        display: none;
+    }
+
+    .submenu.active .submenu-list {
+        display: block;
+    }
+}
     </style>
 </head>
 <body>
-    <nav class="nav-list">
-            <ul>
-                <a href="/inicio/index.html">Inicio</a>
-                <a href="/Unidad 1/index2.html">Unidad 1</a>
-                <a href="/j/index.html">fondo</a>
-                <a href="/Unidad 2/index3.html">Unidad 2</a>
-                <a href="/Unidad 3/index4.html">Unidad 3</a>
-                <a href="/script/script.html">script</a>
-            </ul>
-        </nav>
+     <nav class="nav-list">
+        <!-- Botón de menú hamburguesa -->
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <!-- Menú -->
+        <nav>
+  <ul class="menu" id="menu">
+    <li><a href="/inicio/index.html">Inicio</a></li>
+    <li><a href="/Unidad 1/index2.html">Unidad 1</a></li>
+
+    <li class="submenu">
+      <a href="/Unidad 2/index3.html">Unidad 2</a>
+      <!-- Submenú que aparece al hacer clic en Unidad 2 -->
+      <ul class="submenu-list">
+        <li><a href="/j/index.html">Fondo</a></li>
+        <li><a href="/script/script.html">Script</a></li>
+        <li><a href="/Pagina clue/index.html">Clue</a></li>
+      </ul>
+    </li>
+
+    <li class="submenu">
+      <a href="/Unidad 3/index4.html">Unidad 3</a>
+      <!-- Submenú que aparece al hacer clic en Unidad 3 -->
+      <ul class="submenu-list">
+        <li><a href="/flexbox/flexbox.html">Flexbox</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     <h1>Selecciona un personaje de <span style="color:#6cf;">Solo Leveling</span></h1>
 
     <select id="personaje">
