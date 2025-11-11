@@ -7,14 +7,7 @@
   src: url(Harukaze.otf); 
 }
 
-header {
-    width: 1500px;
-    height: 150px;
-    background-color:rgb(244, 167, 150);
-    margin: 0 auto;
-    align-items: center;
-    text-align: center;
-}
+
  
  .Blossom{
   font-family: Harukaze;
@@ -219,5 +212,69 @@ footer img:hover {
         transform: scale(1.1);
     }
 }
+ #carouselExampleCaptions {
+  max-width: 900px;           /* Tamaño máximo del carrusel */
+  margin: 40px auto;          /* Centrar el carrusel */
+  border-radius: 15px;        /* Bordes redondeados */
+  overflow: hidden;           /* Recorta el contenido que sobresalga */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
 
-    
+/* Imágenes */
+#carouselExampleCaptions .carousel-item img {
+  height: 500px;              /* Altura fija (puedes ajustarla) */
+  object-fit: cover;          /* Asegura que las imágenes llenen sin deformarse */
+  filter: brightness(0.75);   /* Oscurece un poco para que el texto resalte */
+}
+
+/* Texto del carrusel */
+#carouselExampleCaptions .carousel-caption {
+  bottom: 80px;               /* Sube un poco el texto */
+  text-align: left;
+}
+
+#carouselExampleCaptions .carousel-caption h5 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+#carouselExampleCaptions .carousel-caption p {
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Indicadores (puntos) */
+.carousel-indicators [data-bs-target] {
+  background-color: #fff;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+  background-color: #007bff;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Flechas de navegación */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  background-size: 60%;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
