@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Bangers', cursive;
+  background: radial-gradient(circle at center, #ff9933, #ff6600, #ff3300);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* ==== MENÚ ==== */
+.nav-list {
+  background-color: #0d47a1;
+  padding: 10px 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+/* Botón hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+/* Menú principal */
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+  background-color: blue;
+  height: 50px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #ffd700;
+  text-shadow: 0 0 10px #fff, 0 0 20px #ffd700;
+}
+
+/* Submenús */
+.submenu {
+  position: relative;
+}
+
+.submenu-list {
+  display: none;
+  position: absolute;
+  background-color: #003399;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  top: 100%;
+  left: 0;
+  border-radius: 0 0 8px 8px;
+  z-index: 100;
+}
+
+.submenu-list li a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.submenu-list li a:hover {
+  background-color: #ff6600;
+}
+
+.submenu:hover .submenu-list {
+  display: block;
+}
+
+/* ==== FLEXBOX ==== */
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  height: 80vh;
+}
+
+.caja {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  letter-spacing: 2px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efectos hover */
+.caja:hover {
+  transform: scale(1.1);
+  animation: aura 1.5s infinite;
+}
+
+/* Colores por personaje */
+.goku {
+  background: linear-gradient(135deg, #ff4500, #ff8c00);
+  border: 4px solid #ffd700;
+}
+
+.vegeta {
+  background: linear-gradient(135deg, #001f8e, #0033cc);
+  border: 4px solid #00bfff;
+}
+
+.gohan {
+  background: linear-gradient(135deg, #6a0dad, #9b30ff);
+  border: 4px solid #dda0dd;
+}
+
+/* Animación aura */
+@keyframes aura {
+  0% { box-shadow: 0 0 20px 5px rgba(253, 253, 253, 0.5); }
+  50% { box-shadow: 0 0 40px 15px rgba(61, 19, 128, 0.9); }
+  100% { box-shadow: 0 0 20px 5px rgba(66, 2, 109, 0.5); }
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #0d47a1;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+.picoro{
+  background: linear-gradient(135deg, #194902, #194902);
+  border: 4px solid #4c0369;
+}
+
+.freezer {
+  background: linear-gradient(  #370468);
+  border: 4px solid #ffffff;
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="style1.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+</head>
+
+<body>
+    <header>
+        <img src="logo.png" alt="logo" class="logo">
+        <h1 class="Blossom">Inicio</h1>
+      <nav>
+  <ul class="menu" id="menu">
+    <li><a href="/inicio/index.html">Inicio</a></li>
+    <li><a href="/Unidad 1/index2.html">Unidad 1</a></li>
+
+    <li class="submenu">
+      <a href="/Unidad 2/index3.html">Unidad 2</a>
+      <!-- Submenú que aparece al hacer clic en Unidad 2 -->
+      <ul class="submenu-list">
+        <li><a href="/j/index.html">Fondo</a></li>
+        <li><a href="/script/script.html">Script</a></li>
+        <li><a href="/Pagina clue/index.html">Clue</a></li>
+      </ul>
+    </li>
+
+    <li class="submenu">
+      <a href="/Unidad 3/index4.html">Unidad 3</a>
+      <!-- Submenú que aparece al hacer clic en Unidad 3 -->
+      <ul class="submenu-list">
+        <li><a href="/flexbox/flexbox.html">Flexbox</a></li>
+        <li><a href="/ejemplo bookstrap/bookstrap.html">bookstrap</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </header>
+
+    <main>
+        <h1>Bienvenidos a mi bitacora</h1>
+        <p>En esta sección estará el inicio de mi página por lo cuál solo estara un video que esperó les guste</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UaMBtjxvuMA?si=hemKDWn-YGmpF5JH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+       
+</main>
+<div id="cookieBanner" class="cookie-banner">
+  <div class="text">
+    Este sitio utiliza cookies para mejorar la experiencia y mostrar contenido embebido como YouTube.
+  </div>
+  <div class="cookie-actions">
+    <button id="openConfig" class="btn btn--ghost">Configurar</button>
+    <button id="acceptAll" class="btn btn--primary">Aceptar todo</button>
+  </div>
+</div>
+
+<aside id="cookiePanel" class="cookie-panel">
+  <h3>Configuración de cookies</h3>
+  <p class="small">Activa o desactiva las categorías necesarias.</p>
+
+  <div class="perm">
+    <div>
+      <p><strong>Esenciales</strong></p>
+      <div class="small">Requeridas para el funcionamiento.</div>
+    </div>
+    <div><div class="switch on" data-key="essential"><span class="knob"></span></div></div>
+  </div>
+
+  <div class="perm">
+    <div>
+      <p><strong>Analítica / Contenido externo</strong></p>
+      <div class="small">Permite cargar videos de YouTube.</div>
+    </div>
+    <div><div class="switch" data-key="analytics"><span class="knob"></span></div></div>
+  </div>
+
+  <div class="cookie-footer">
+    <button id="savePrefs" class="btn btn--primary">Guardar</button>
+    <button id="rejectAll" class="btn btn--ghost">Rechazar</button>
+  </div>
+</aside>
+
+    <footer>
+        <img src="imagenes/instagram.png" alt="instagram">
+        <img src="imagenes/facebook.png" alt="facebook">
+        <img src="imagenes/whatsApp.png" alt="whatsApp">
+    </footer>
+    <script>
+  const CONSENT_KEY = "consent_v1";
+  const defaultConsent = { essential:true, analytics:false };
+
+  const banner = document.getElementById("cookieBanner");
+  const panel = document.getElementById("cookiePanel");
+  const openConfig = document.getElementById("openConfig");
+  const acceptAll = document.getElementById("acceptAll");
+  const rejectAll = document.getElementById("rejectAll");
+  const savePrefs = document.getElementById("savePrefs");
+  const switches = document.querySelectorAll(".switch");
+
+  function getConsent(){
+    try {
+      return JSON.parse(localStorage.getItem(CONSENT_KEY));
+    } catch(e){ return null; }
+  }
+  function saveConsent(obj){
+    localStorage.setItem(CONSENT_KEY, JSON.stringify(obj));
+  }
+
+  function applyUI(c){
+    if(!c){ banner.style.display="flex"; return; }
+    banner.style.display="none";
+    switches.forEach(sw=>{
+      const key = sw.dataset.key;
+      if(c[key]) sw.classList.add("on");
+      else sw.classList.remove("on");
+    });
+    // Cargar videos si analytics está permitido
+    if(c.analytics) loadYouTube();
+  }
+
+  function loadYouTube(){
+    const yt = document.querySelectorAll("[data-yt]");
+    yt.forEach(el=>{
+      if(!el.dataset.loaded){
+        el.src = el.dataset.src;
+        el.dataset.loaded = "1";
+      }
+    });
+  }
+
+  // Inicializar
+  const stored = getConsent();
+  applyUI(stored);
+
+  openConfig.onclick = ()=> panel.classList.add("open");
+  acceptAll.onclick = ()=>{
+    const all = { essential:true, analytics:true };
+    saveConsent(all);
+    applyUI(all);
+  };
+  rejectAll.onclick = ()=>{
+    saveConsent(defaultConsent);
+    applyUI(defaultConsent);
+  };
+  savePrefs.onclick = ()=>{
+    const obj = { essential:true, analytics:false };
+    switches.forEach(sw=>{
+      if(sw.dataset.key !== "essential"){
+        obj[sw.dataset.key] = sw.classList.contains("on");
+      }
+    });
+    saveConsent(obj);
+    applyUI(obj);
+    panel.classList.remove("open");
+  };
+
+  switches.forEach(sw=>{
+    sw.onclick = ()=>{
+      if(sw.dataset.key === "essential") return;
+      sw.classList.toggle("on");
+    };
+  });
+</script>
+</body>
+
+</html>

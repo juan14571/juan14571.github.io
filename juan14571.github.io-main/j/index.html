@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax Efecto</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+</head>
+<body>
+   <nav>
+  <ul class="menu" id="menu">
+    <li><a href="/inicio/index.html">Inicio</a></li>
+    <li><a href="/Unidad 1/index2.html">Unidad 1</a></li>
+
+    <li class="submenu">
+      <a href="/Unidad 2/index3.html">Unidad 2</a>
+      <!-- Submenú que aparece al hacer clic en Unidad 2 -->
+      <ul class="submenu-list">
+        <li><a href="/j/index.html">Fondo</a></li>
+        <li><a href="/script/script.html">Script</a></li>
+        <li><a href="/Pagina clue/index.html">Clue</a></li>
+      </ul>
+    </li>
+
+    <li class="submenu">
+      <a href="/Unidad 3/index4.html">Unidad 3</a>
+      <!-- Submenú que aparece al hacer clic en Unidad 3 -->
+      <ul class="submenu-list">
+        <li><a href="/flexbox/flexbox.html">Flexbox</a></li>
+        <li><a href="/ejemplo bookstrap/bookstrap.html">bookstrap</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+  <!-- CONTENEDOR DEL PARALLAX -->
+  <div id="parallax-container">
+    <div class="layer" id="layer1"></div>
+    <div class="layer" id="layer2"></div>
+    <div class="layer" id="layer3"></div>
+
+    <!-- Personajes en primer plano -->
+    <img src="img/fondo 3-Photoroom.png" alt="Beru" class="beru">
+    <img src="img/fondo 4-Photoroom.png" alt="Igris" class="igris">
+    <img src="img/fondo 5-Photoroom.png" alt="Jing" class="jing">
+  </div>
+
+  <!-- CONTENIDO DE LA PÁGINA -->
+  <section class="contenido">
+    <h2>Texto</h2>
+    <p>Párrafo de ejemplo con desplazamiento parallax.</p>
+    <div style="height: 1000px;"></div>
+    <p>Fin de la página.</p>
+  </section>
+
+  <!-- SCRIPT PARALLAX -->
+  <script>
+    document.addEventListener('scroll', function () {
+      const scrollY = window.scrollY;
+
+      // Capas de fondo
+      const layer1 = document.getElementById('layer1');
+      const layer2 = document.getElementById('layer2');
+      const layer3 = document.getElementById('layer3');
+
+      // Diferentes velocidades
+      layer1.style.transform = `translateY(${scrollY * 0.3}px)`; // más lento
+      layer2.style.transform = `translateY(${scrollY * 0.5}px)`;
+      layer3.style.transform = `translateY(${scrollY * 0.7}px)`; // más rápido
+    });
+  </script>
+</body>
+</html>

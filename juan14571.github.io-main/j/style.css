@@ -1,0 +1,250 @@
+@font-face {
+  font-family:Niagato;
+  src: url(Niagato.ttf);
+ }
+@font-face {
+  font-family: Harukaze;
+  src: url(Harukaze.otf); 
+}
+
+header {
+    width: 96.1vw;
+    height: 150px;
+    background-color:rgb(244, 167, 150);
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+}
+
+body {
+  margin: 10px;
+  padding: 10px;
+  font-family:sans-serif;
+  background-color:lightblue ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+ header {
+  width: 100%;
+  background-color:#ffa88c ;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: static; 
+  z-index: 1000;
+}
+a:hover {
+      text-decoration:
+    underline;
+      transform: translateY(-5px);
+      background-color: #4a0b0b;
+    }
+   
+    .nav-list {
+    position: relative;
+    background-color: #b39191;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    height: 4px;
+    background-color: white;
+    width: 100%;
+}
+
+.submenu-list {
+    display: none;
+    background-color: #444;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu-list li {
+    padding: 10px;
+}
+
+.submenu:hover .submenu-list {
+    display: block;
+}
+
+/* Menú desplegable en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .menu li {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .submenu-list {
+        display: none;
+    }
+
+    .submenu.active .submenu-list {
+        display: block;
+    }
+}
+
+  main {
+  padding-top: 40px;
+  justify-content: center;
+  align-items: center;
+}
+footer{
+
+    width: 96.1vw;
+    height: 25px;
+    text-align: left;
+    background-color: rgb(250, 230, 196);
+    padding: 20px;
+
+   bottom: 0;
+    
+    }
+footer img {
+    
+    height: 90%;
+    padding-left: 15%;
+    
+    
+}
+footer img {
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+.jing{
+  position: absolute;
+  z-index: 4;
+  margin: 0;
+width: 96.1vw;
+}
+.igris{
+  position: absolute;
+  z-index: 3;
+  margin: 0;
+width: 96.1vw;
+}
+.beru{
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+width: 96.1vw;
+}
+.fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+
+img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+#parallax-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Capas de fondo */
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  will-change: transform; /* mejora rendimiento */
+}
+
+/* Asigna tus imágenes aquí */
+#layer1 {
+  background-image: url('img/fondo 1.png');
+  z-index: 1;
+}
+
+#layer2 {
+  background-image: url('img/fondo 2.png');
+  z-index: 2;
+}
+
+#layer3 {
+  background-image: url('img/fondo 3.png');
+  z-index: 3;
+}
+
+/* Personajes */
+.beru, .igris, .jing {
+  position: absolute;
+  bottom: 0;
+  width: auto;
+  height: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+/* Contenido inferior */
+.contenido {
+  position: relative;
+  z-index: 10;
+  background: rgb(19, 34, 168);
+  padding: 50px;
+  width: 94%;
+}

@@ -1,0 +1,280 @@
+@font-face {
+  font-family:Niagato;
+  src: url(Niagato.ttf);
+ }
+@font-face {
+  font-family: Harukaze;
+  src: url(Harukaze.otf); 
+}
+
+
+ 
+ .Blossom{
+  font-family: Harukaze;
+   text-align: center;
+  font-size: 50px;
+  margin: 0;
+ }
+
+body {
+  margin: 10px;
+  padding: 10px;
+  font-family:sans-serif;
+  background-color:#f2f2f2 ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+ header {
+  width: 100%;
+  background-color:#ffa88c ;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: static; 
+  z-index: 1000;
+}
+
+.logo{
+   height: 100px;
+  width: auto;
+  border-radius: 50%;
+  animation: rotar 8s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes rotar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+ a:hover {
+      text-decoration:
+    underline;
+      transform: translateY(-5px);
+      background-color: #4a0b0b;
+    }
+   
+    .nav-list {
+    position: relative;
+    background-color: #b39191;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-right: 20px;
+    
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    display: block;
+    
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    height: 4px;
+    background-color: white;
+    width: 100%;
+}
+
+.submenu-list {
+    display: none;
+    background-color: #444;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu-list li {
+    padding: 10px;
+}
+
+.submenu:hover .submenu-list {
+    display: block;
+}
+
+/* Menú desplegable en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .menu li {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .submenu-list {
+        display: none;
+    }
+
+    .submenu.active .submenu-list {
+        display: block;
+    }
+}
+  main {
+  padding-top: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+  .img-derecha {
+    float: right;
+    margin-left: 10px;
+     width: 150px;
+}
+ 
+.texto {
+     
+    background-color: rgb(232, 214, 188);
+    width: 700px;
+    height: 500px;
+    margin: 70px auto;
+    border-radius: 15px;
+    }
+
+
+
+ 
+footer{
+
+    width: 1500px;
+    height: 25px;
+    text-align: left;
+    background-color: rgb(250, 230, 196);
+    padding: 20px;
+
+   bottom: 0;
+    
+    }
+footer img {
+    
+    height: 90%;
+    padding-left: 15%;
+    
+    
+}
+footer img {
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+footer img:hover {
+    animation: palpitacion 1s infinite;
+}
+
+@keyframes palpitacion {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+ #carouselExampleCaptions {
+  max-width: 900px;           /* Tamaño máximo del carrusel */
+  margin: 40px auto;          /* Centrar el carrusel */
+  border-radius: 15px;        /* Bordes redondeados */
+  overflow: hidden;           /* Recorta el contenido que sobresalga */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Imágenes */
+#carouselExampleCaptions .carousel-item img {
+  height: 500px;              /* Altura fija (puedes ajustarla) */
+  object-fit: cover;          /* Asegura que las imágenes llenen sin deformarse */
+  filter: brightness(0.75);   /* Oscurece un poco para que el texto resalte */
+}
+
+/* Texto del carrusel */
+#carouselExampleCaptions .carousel-caption {
+  bottom: 80px;               /* Sube un poco el texto */
+  text-align: left;
+}
+
+#carouselExampleCaptions .carousel-caption h5 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+#carouselExampleCaptions .carousel-caption p {
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Indicadores (puntos) */
+.carousel-indicators [data-bs-target] {
+  background-color: #fff;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+  background-color: #007bff;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Flechas de navegación */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  background-size: 60%;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
