@@ -9,34 +9,98 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 </head>
+ <nav class="nav-list">
+        <!-- Botón de menú hamburguesa -->
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
 
+        <!-- Menú -->
+    <nav>
+  <ul class="menu" id="menu">
+    <li><a href="/inicio/index.html">Inicio</a></li>
+    <li><a href="/Unidad 1/index2.html">Unidad 1</a></li>
+
+    <li class="submenu">
+      <a href="/Unidad 2/index3.html">Unidad 2</a>
+      <!-- Submenú que aparece al hacer clic en Unidad 2 -->
+      <ul class="submenu-list">
+        <li><a href="/j/index.html">Fondo</a></li>
+        <li><a href="/script/script.html">Script</a></li>
+        <li><a href="/Pagina clue/index.html">Clue</a></li>
+      </ul>
+    </li>
+
+    <li class="submenu">
+      <a href="/Unidad 3/index4.html">Unidad 3</a>
+      <!-- Submenú que aparece al hacer clic en Unidad 3 -->
+      <ul class="submenu-list">
+        <li><a href="/flexbox/flexbox.html">Flexbox</a></li>
+        <li><a href="/ejemplo bookstrap/bookstrap.html">bookstrap</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 <body>
     <header>
        <img src="logo 1.png" class="logo" alt="logo">
          <p class="Blossom">Bitacora</p> 
 
     </header>
+<main>
+  <h1>Actividad 1:Cotizacion</h1>
+        <h3>Fecha: 05/11/2025 <br></h3>
+        <h3>Nombre: Juan Gerardo Perez Ramirez <br></h3>
+        <img src="Captura de pantalla 2025-11-05 182426.png" alt="Cotizacion">
 
-   <nav class="nav-list">
-            <ul>
-                <a href="/inicio/index.html">Inicio</a>
-                <a href="/Unidad 1/index2.html">Unidad 1</a>
-                <a href="/Unidad 2/index3.html">Unidad 2</a>
-                <a href="/Unidad 3/index4.html">Unidad 3</a>
-            </ul>
-        </nav>
-
-    <main>
-        <h1>¿Que esperabas?</h1>
-            Aquí no hay nadaaaaaaa <br>
-        
-        <h2>Pero aqui te dejo otra pelicula</h2>
-        <section id="bitacora">
-        <iframe width="1200" height="630" src="https://www.youtube.com/embed/y0LmPZkE95U?si=7GAiNtHX2Lc4OYgm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </main>
-
-
+        <h1>Actividad 2: perfiles de usuarios <br></h1>
+        <h3>Fecha: 10/11/2025 <br></h3>
+        <h3>Nombre: Juan Gerardo Perez Ramirez <br></h3>
+        <div class="carousel-container">
+  <div class="slide active">
+    <img src="USUARIO3.png" alt="Alejandro Soler" class="profile-image" />
+    <h2>Alejandro Soler</h2>
+    <div class="info"><strong>Edad:</strong> 36 años</div>
+    <div class="info"><strong>Ocupación:</strong> Dueño y Líder</div>
+    <div class="info"><strong>Cargo:</strong> Jefe de CV</div>
+    <p>
+      • Objetivo: Maximizar la ocupación de las salas y automatizar la gestión de reservas para reducir el tiempo de espera y optimizar las ventas.<br />
+      • Problema: Problemas de comunicación en la toma de reservas.<br />
+      • Necesidad: Sistema de gestión fácil de usar y móvil.
+    </p>
+  </div>
+  <div class="slide">
+    <img src="usuario1.png" alt="Sofía Altamirano" class="profile-image" />
+    <h2>Sofía Altamirano</h2>
+    <div class="info"><strong>Edad:</strong> 25 años</div>
+    <div class="info"><strong>Ocupación:</strong> Abogada</div>
+    <p>
+      • Objetivo: Buscar nuevas ideas que diversifiquen la creatividad.<br />
+      • Problema: Gestión complicada sin habilidades de monitoreo.<br />
+      • Necesidad: Sistema de reservas personalizado.
+    </p>
+  </div>
+  <div class="slide">
+    <img src="usuario2.png" alt="Rubén Escárcega" class="profile-image" />
+    <h2>Rubén Escárcega</h2>
+    <div class="info"><strong>Edad:</strong> 42 años</div>
+    <div class="info"><strong>Ocupación:</strong> Empleado</div>
+    <p>
+      • Objetivo: Mejorar la planificación.<br />
+      • Problema: Dificultad para visualizar tareas pendientes.<br />
+      • Necesidad: Solución para gestionar tareas y comunicación.
+    </p>
+  </div>
+  <div class="buttons">
+    <button id="prevBtn">Anterior</button>
+    <button id="nextBtn">Siguiente</button>
+  </div>
+</div>
+</main>
     <footer>
         <img src="facebook.png" alt="instagram"> 
         <img src="instagram.png" alt="facebook">
