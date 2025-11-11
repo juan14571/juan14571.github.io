@@ -54,36 +54,101 @@ body {
     }
 }
 
-nav{
-   background-color:#ffcebf;
-  height: auto; 
-  bottom: 100px;
-  padding: 10px;
-justify-content: center;
-}
-
-nav a {
-    color: #e17a7a;
-    font-weight: bold;
-    font-size: larger;
-    padding: 10px 20px;
-    display: flex
- color 0.3s, transform 0.3s;
- margin: 70px;
-}
- a:hover {
+a:hover {
       text-decoration:
     underline;
       transform: translateY(-5px);
       background-color: #4a0b0b;
     }
-    .nav ul{
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        list-style: none;
-        padding: 0;
+   
+    .nav-list {
+    position: relative;
+    background-color: #b39191;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    height: 4px;
+    background-color: white;
+    width: 100%;
+}
+
+.submenu-list {
+    display: none;
+    background-color: #444;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu-list li {
+    padding: 10px;
+}
+
+.submenu:hover .submenu-list {
+    display: block;
+}
+
+/* Menú desplegable en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
     }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .menu li {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .submenu-list {
+        display: none;
+    }
+
+    .submenu.active .submenu-list {
+        display: block;
+    }
+}
 
   main {
   padding-top: 40px;
@@ -159,3 +224,148 @@ footer img:hover {
             margin: 10px;
         }
       }
+      .cookie-banner {
+  position: fixed;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: #ffe1d6;              /* rosa pastel */
+  color: #4a0b0b;                   /* tono marrón que ya usas */
+  padding: 16px 20px;
+  border-radius: 15px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  z-index: 9999;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+  font-family: Roboto, sans-serif;
+  border: 2px solid #ffb7a1;
+}
+
+.cookie-banner .text {
+  flex: 1;
+  font-size: 14px;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  transition: transform .2s;
+}
+
+.btn:hover {
+  transform: scale(1.06);
+}
+
+/* Colores según tu paleta */
+.btn--primary {
+  background: #ff8c66;
+  color: #fff;
+}
+
+.btn--ghost {
+  background: #ffe1d6;
+  color: #4a0b0b;
+  border: 2px solid #ffb7a1;
+}
+
+/* ============================= */
+/* PANEL DE CONFIGURACIÓN */
+/* ============================= */
+
+.cookie-panel {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 360px;
+  max-width: calc(100% - 40px);
+  background: #fff7ef;
+  color: #4a0b0b;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  z-index: 10000;
+  transform: translateY(20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .25s ease;
+  border: 2px solid #ffccb8;
+}
+
+.cookie-panel.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cookie-panel h3 {
+  margin: 0 0 10px 0;
+  font-family: Harukaze;
+  font-size: 32px;
+  text-align: center;
+  color: #4a0b0b;
+}
+
+.small {
+  font-size: 12px;
+  color: #6b4d3a;
+}
+
+.perm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #ffd5c5;
+}
+
+.perm p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* SWITCH */
+.switch {
+  position: relative;
+  width: 48px;
+  height: 26px;
+  background: #ffb7a1;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.switch .knob {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform .2s;
+}
+
+.switch.on {
+  background: #ff865c;
+}
+
+.switch.on .knob {
+  transform: translateX(22px);
+}
+
+/* Footer botones */
+.cookie-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 12px;
+}
