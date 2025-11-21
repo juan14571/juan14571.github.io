@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 </head>
+
  <nav class="nav-list">
         <!-- Botón de menú hamburguesa -->
         <div class="hamburger" id="hamburger">
@@ -100,12 +101,64 @@
     <button id="nextBtn">Siguiente</button>
   </div>
 </div>
+<div>
+  <h1>Actividad 3:presentacion</h1>
+        <h3>Fecha: 21/11/2025 <br></h3>
+        <h3>Nombre: Juan Gerardo Perez Ramirez <br></h3>
+        <div class="carousel-img-container">
+    <div class="carousel-img-slide active"><img src="img1.jpg"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/1.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/2.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/3.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/4.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/5.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/6.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/7.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/8.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/9.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/10.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/11.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/12.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/13.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/14.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/15.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/16.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/17.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/18.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/19.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/20.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/21.png"></div>
+    <div class="carousel-img-slide"><img src="/Unidad 3/22.png"></div>
+
+    <button class="carousel-btn" id="prevImg">⟨</button>
+    <button class="carousel-btn" id="nextImg">⟩</button>
+</div>
+</div>
 </main>
     <footer>
         <img src="facebook.png" alt="instagram"> 
         <img src="instagram.png" alt="facebook">
         <img src="whatsapp.png" alt="whatsApp">
     </footer>
+<script>
+let indexImg = 0;
+const slidesImg = document.querySelectorAll('.carousel-img-slide');
+
+function showImg(n) {
+    slidesImg.forEach(s => s.classList.remove('active'));
+    slidesImg[n].classList.add('active');
+}
+
+document.getElementById('nextImg').onclick = () => {
+    indexImg = (indexImg + 1) % slidesImg.length;
+    showImg(indexImg);
+};
+
+document.getElementById('prevImg').onclick = () => {
+    indexImg = (indexImg - 1 + slidesImg.length) % slidesImg.length;
+    showImg(indexImg);
+};
+</script>
 
 </body>
 </html>
